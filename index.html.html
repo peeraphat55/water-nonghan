@@ -41,59 +41,37 @@
         .wqi-c { background-color: #FBBF24; } /* Yellow */
         .wqi-d { background-color: #F97316; } /* Orange */
         .wqi-e { background-color: #EF4444; } /* Red */
-        
-        .flow-line {
-            stroke-dasharray: 10, 10;
-            animation: flowAnimation 0.8s linear infinite;
-        }
-        @keyframes flowAnimation {
-            to { stroke-dashoffset: -20; }
-        }
-        
-        /* Styling for Toggle Switch */
-        input:checked ~ .toggle-dot {
-            transform: translateX(100%);
-        }
-        input:checked ~ .toggle-bg {
-            background-color: #0d9488; /* Teal-600 */
-        }
     </style>
 </head>
 <body class="text-gray-800 pb-10">
 
     <!-- Top Alert Banner -->
-    <div class="bg-red-500 text-white px-4 py-2 text-sm flex items-center justify-center animate-pulse">
+    <div class="bg-red-500 text-white px-4 py-2 text-base flex items-center justify-center animate-pulse">
         <i class="fas fa-exclamation-triangle mr-2"></i>
         <span>แจ้งเตือนจุดวิกฤต: พบสถานี BNH01 และ BNH08 มีค่าคุณภาพน้ำเสื่อมโทรม (WQI ระดับ E และ D) กรุณาตรวจสอบแผนที่</span>
     </div>
 
     <!-- Navigation -->
     <nav class="bg-teal-800 text-white shadow-lg border-b-4 border-teal-500">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="w-full mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
                     <div class="flex-shrink-0 flex items-center gap-2">
-                        <i class="fas fa-water text-2xl text-teal-300"></i>
-                        <span class="font-bold text-xl tracking-tight">Living Nong Han</span>
-                        <span class="text-teal-200 text-sm ml-2 hidden md:block border-l border-teal-600 pl-2">น้ำหนองหาร</span>
+                        <i class="fas fa-water text-3xl text-teal-300"></i>
+                        <span class="font-bold text-2xl tracking-tight">Living Nong Han</span>
+                        <span class="text-teal-200 text-base ml-2 hidden md:block border-l border-teal-600 pl-2">น้ำหนองหาร</span>
                     </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <span class="text-sm text-teal-100 hidden sm:inline-block"><i class="far fa-clock mr-1"></i> ข้อมูลล่าสุด: วันนี้</span>
-                    <button class="bg-teal-700 hover:bg-teal-600 px-3 py-1.5 rounded text-sm transition font-medium">
-                        <i class="fas fa-cog mr-1"></i> ตั้งค่าระบบ
-                    </button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
         
         <!-- Header Text -->
         <div class="mb-6">
-            <h1 class="text-2xl font-bold text-gray-800">แดชบอร์ดเฝ้าระวังคุณภาพน้ำอัจฉริยะ</h1>
-            <p class="text-gray-500 text-sm mt-1">โจทย์: จากข้อมูลเซนเซอร์ 18 สถานี × 11 พารามิเตอร์ ทีมจะช่วยเมืองเฝ้าระวังและตัดสินใจได้อย่างไร?</p>
+            <h1 class="text-3xl font-bold text-gray-800">แดชบอร์ดเฝ้าระวังคุณภาพน้ำอัจฉริยะ</h1>
+            <p class="text-gray-500 text-base mt-1">โจทย์: จากข้อมูลเซนเซอร์ 18 สถานี × 11 พารามิเตอร์ ทีมจะช่วยเมืองเฝ้าระวังและตัดสินใจได้อย่างไร?</p>
         </div>
 
         <!-- 1. Executive Summary KPIs -->
@@ -102,56 +80,56 @@
                 <!-- KPI 1 -->
                 <div class="glass-panel rounded-xl p-4 flex items-center justify-between border-l-4 border-blue-500 hover:shadow-md transition">
                     <div>
-                        <p class="text-xs text-gray-500 font-semibold uppercase tracking-wider">ดัชนี WQI เฉลี่ย</p>
+                        <p class="text-sm text-gray-500 font-semibold uppercase tracking-wider">ดัชนี WQI เฉลี่ย</p>
                         <div class="flex items-baseline mt-1">
-                            <span class="text-3xl font-bold text-gray-800">70.6</span>
-                            <span class="ml-2 text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-0.5 rounded">เกณฑ์ B (ดี)</span>
+                            <span class="text-4xl font-bold text-gray-800">70.6</span>
+                            <span class="ml-2 text-sm font-semibold bg-blue-100 text-blue-800 px-2 py-0.5 rounded">เกณฑ์ B (ดี)</span>
                         </div>
                     </div>
                     <div class="bg-blue-50 w-12 h-12 rounded-full flex items-center justify-center text-blue-500">
-                        <i class="fas fa-chart-pie text-xl"></i>
+                        <i class="fas fa-chart-pie text-2xl"></i>
                     </div>
                 </div>
                 
                 <!-- KPI 2 -->
                 <div class="glass-panel rounded-xl p-4 flex items-center justify-between border-l-4 border-teal-600 hover:shadow-md transition">
                     <div>
-                        <p class="text-xs text-gray-500 font-semibold uppercase tracking-wider">จุดวิกฤต (Hotspots)</p>
+                        <p class="text-sm text-gray-500 font-semibold uppercase tracking-wider">จุดวิกฤต (Hotspots)</p>
                         <div class="flex items-baseline mt-1">
-                            <span class="text-3xl font-bold text-gray-800">3</span>
-                            <span class="ml-2 text-xs text-red-500 font-medium"><i class="fas fa-arrow-up"></i> สูงกว่าปกติ</span>
+                            <span class="text-4xl font-bold text-gray-800">3</span>
+                            <span class="ml-2 text-sm text-red-500 font-medium"><i class="fas fa-arrow-up"></i> สูงกว่าปกติ</span>
                         </div>
                     </div>
                     <div class="bg-teal-50 w-12 h-12 rounded-full flex items-center justify-center text-teal-600">
-                        <i class="fas fa-map-marker-alt text-xl"></i>
+                        <i class="fas fa-map-marker-alt text-2xl"></i>
                     </div>
                 </div>
 
                 <!-- KPI 3 -->
                 <div class="glass-panel rounded-xl p-4 flex items-center justify-between border-l-4 border-green-500 hover:shadow-md transition">
                     <div>
-                        <p class="text-xs text-gray-500 font-semibold uppercase tracking-wider">ออกซิเจนละลายน้ำ (DO)</p>
+                        <p class="text-sm text-gray-500 font-semibold uppercase tracking-wider">ออกซิเจนละลายน้ำ (DO)</p>
                         <div class="flex items-baseline mt-1">
-                            <span class="text-3xl font-bold text-gray-800">5.87</span>
-                            <span class="ml-1 text-xs text-gray-600">mg/L</span>
+                            <span class="text-4xl font-bold text-gray-800">5.87</span>
+                            <span class="ml-1 text-sm text-gray-600">mg/L</span>
                         </div>
                     </div>
                     <div class="bg-green-50 w-12 h-12 rounded-full flex items-center justify-center text-green-500">
-                        <i class="fas fa-wind text-xl"></i>
+                        <i class="fas fa-wind text-2xl"></i>
                     </div>
                 </div>
 
                 <!-- KPI 4 -->
                 <div class="glass-panel rounded-xl p-4 flex items-center justify-between border-l-4 border-orange-500 hover:shadow-md transition">
                     <div>
-                        <p class="text-xs text-gray-500 font-semibold uppercase tracking-wider">ความเน่าเสีย (BOD)</p>
+                        <p class="text-sm text-gray-500 font-semibold uppercase tracking-wider">ความเน่าเสีย (BOD)</p>
                         <div class="flex items-baseline mt-1">
-                            <span class="text-3xl font-bold text-gray-800">3.12</span>
-                            <span class="ml-1 text-xs text-gray-600">mg/L</span>
+                            <span class="text-4xl font-bold text-gray-800">3.12</span>
+                            <span class="ml-1 text-sm text-gray-600">mg/L</span>
                         </div>
                     </div>
                     <div class="bg-orange-50 w-12 h-12 rounded-full flex items-center justify-center text-orange-500">
-                        <i class="fas fa-biohazard text-xl"></i>
+                        <i class="fas fa-biohazard text-2xl"></i>
                     </div>
                 </div>
             </div>
@@ -162,15 +140,15 @@
             <div class="xl:col-span-2 flex flex-col gap-6">
                 
                 <!-- 2. Interactive Map (Real Map via Leaflet) -->
-                <div class="glass-panel rounded-xl overflow-hidden flex flex-col h-[500px]">
+                <div class="glass-panel rounded-xl overflow-hidden flex flex-col h-[700px]">
                     <div class="bg-white px-5 py-3 border-b border-gray-100 flex justify-between items-center z-10 relative">
                         <div class="flex items-center">
                             <div class="w-8 h-8 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center mr-3">
                                 <i class="fas fa-map-marked-alt"></i>
                             </div>
-                            <h3 class="font-bold text-lg text-gray-800">ดัชนี WQI อัตโนมัติ + แผนที่ดาวเทียม</h3>
+                            <h3 class="font-bold text-xl text-gray-800">ดัชนี WQI อัตโนมัติ + แผนที่ดาวเทียม</h3>
                         </div>
-                        <div class="hidden sm:flex space-x-2 text-xs font-medium text-gray-600 bg-gray-50 px-3 py-1.5 rounded-lg border">
+                        <div class="hidden sm:flex space-x-2 text-sm font-medium text-gray-600 bg-gray-50 px-3 py-1.5 rounded-lg border">
                             <span class="flex items-center"><span class="w-2.5 h-2.5 rounded-full bg-green-500 mr-1.5 shadow"></span>A (ดีมาก)</span>
                             <span class="flex items-center ml-2"><span class="w-2.5 h-2.5 rounded-full bg-blue-500 mr-1.5 shadow"></span>B</span>
                             <span class="flex items-center ml-2"><span class="w-2.5 h-2.5 rounded-full bg-yellow-400 mr-1.5 shadow"></span>C</span>
@@ -178,16 +156,7 @@
                             <span class="flex items-center ml-2"><span class="w-2.5 h-2.5 rounded-full bg-red-500 mr-1.5 shadow animate-pulse"></span>E (วิกฤต)</span>
                         </div>
 
-                        <div class="flex items-center ml-2 sm:ml-4 border-l border-gray-200 pl-2 sm:pl-4">
-                            <label class="flex items-center cursor-pointer">
-                                <div class="relative">
-                                    <input type="checkbox" id="toggleFlow" class="sr-only" checked>
-                                    <div class="toggle-bg block bg-gray-300 w-8 h-5 rounded-full transition-colors duration-300"></div>
-                                    <div class="toggle-dot absolute left-0.5 top-0.5 bg-white w-4 h-4 rounded-full transition-transform duration-300 shadow"></div>
-                                </div>
-                                <div class="ml-2 text-xs font-bold text-teal-800">ทิศทางน้ำ</div>
-                            </label>
-                        </div>
+
                     </div>
                     
                     <!-- THE MAP CONTAINER -->
@@ -202,9 +171,9 @@
                             <div class="w-8 h-8 rounded-full bg-yellow-100 text-yellow-600 flex items-center justify-center mr-3">
                                 <i class="fas fa-lightbulb"></i>
                             </div>
-                            <h3 class="font-bold text-lg text-gray-800">คำแนะนำเชิงนโยบาย (Actionable Insights)</h3>
+                            <h3 class="font-bold text-xl text-gray-800">คำแนะนำเชิงนโยบาย (Actionable Insights)</h3>
                         </div>
-                        <p class="text-xs text-gray-500 mt-1 ml-11">จัดลำดับการบำบัดน้ำเสียก่อนปล่อยลงหนองหารตามงบที่จำกัด</p>
+                        <p class="text-sm text-gray-500 mt-1 ml-11">จัดลำดับการบำบัดน้ำเสียก่อนปล่อยลงหนองหารตามงบที่จำกัด</p>
                     </div>
                     <div class="p-5 grid grid-cols-1 md:grid-cols-2 gap-4">
                         
@@ -212,14 +181,14 @@
                         <div class="bg-orange-50 border border-orange-100 rounded-lg p-4 flex flex-col justify-between hover:shadow-sm transition">
                             <div>
                                 <div class="flex items-center gap-2 mb-2">
-                                    <span class="bg-orange-200 text-orange-700 text-xs px-2 py-0.5 rounded font-bold">Priority 1</span>
-                                    <h4 class="font-bold text-gray-800 text-sm">จัดการสถานีลำห้วย (Tributary)</h4>
+                                    <span class="bg-orange-200 text-orange-700 text-sm px-2 py-0.5 rounded font-bold">Priority 1</span>
+                                    <h4 class="font-bold text-gray-800 text-base">จัดการสถานีลำห้วย (Tributary)</h4>
                                 </div>
-                                <p class="text-xs text-gray-600 leading-relaxed">
+                                <p class="text-sm text-gray-600 leading-relaxed">
                                     ลำห้วย (เช่น BNH01, BNH07) มีค่า BOD เฉลี่ยสูงกว่าตัวหนองหารอย่างมีนัยสำคัญ ควรตั้งงบประมาณสร้างระบบดักจับไขมัน/บำบัดเบื้องต้นก่อนน้ำไหลลงหนองหาร
                                 </p>
                             </div>
-                            <button class="mt-3 w-full bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 text-xs py-1.5 rounded font-medium transition shadow-sm">
+                            <button class="mt-3 w-full bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 text-sm py-1.5 rounded font-medium transition shadow-sm">
                                 <i class="fas fa-sliders-h mr-1 text-gray-400"></i> จำลองการตั้งงบประมาณ
                             </button>
                         </div>
@@ -228,14 +197,14 @@
                         <div class="bg-blue-50 border border-blue-100 rounded-lg p-4 flex flex-col justify-between hover:shadow-sm transition">
                             <div>
                                 <div class="flex items-center gap-2 mb-2">
-                                    <span class="bg-blue-200 text-blue-700 text-xs px-2 py-0.5 rounded font-bold">Priority 2</span>
-                                    <h4 class="font-bold text-gray-800 text-sm">เฝ้าระวังพื้นที่ตำบลธาตุนาเวง</h4>
+                                    <span class="bg-blue-200 text-blue-700 text-sm px-2 py-0.5 rounded font-bold">Priority 2</span>
+                                    <h4 class="font-bold text-gray-800 text-base">เฝ้าระวังพื้นที่ตำบลธาตุนาเวง</h4>
                                 </div>
-                                <p class="text-xs text-gray-600 leading-relaxed">
+                                <p class="text-sm text-gray-600 leading-relaxed">
                                     ข้อมูลตรวจพบแบคทีเรีย (Coliform) สูงผิดปกติในเขตธาตุนาเวง แนะนำให้ลงพื้นที่ตรวจสอบแหล่งกำเนิดมลพิษทางการเกษตรหรือปศุสัตว์
                                 </p>
                             </div>
-                            <button class="mt-3 w-full bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 text-xs py-1.5 rounded font-medium transition shadow-sm">
+                            <button class="mt-3 w-full bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 text-sm py-1.5 rounded font-medium transition shadow-sm">
                                 <i class="fas fa-file-alt mr-1 text-gray-400"></i> สร้างรายงานแจ้งเตือน
                             </button>
                         </div>
@@ -255,16 +224,16 @@
                             <div class="w-8 h-8 rounded-full bg-teal-800 text-white flex items-center justify-center mr-3 shadow-inner">
                                 <i class="fas fa-crosshairs"></i>
                             </div>
-                            <h3 class="font-bold text-lg text-gray-800">จำแนกจุดวิกฤต (Hotspot)</h3>
+                            <h3 class="font-bold text-xl text-gray-800">จำแนกจุดวิกฤต (Hotspot)</h3>
                         </div>
                     </div>
-                    <div class="px-5 pt-1 pb-2 bg-gray-50 text-xs text-gray-500 border-b border-gray-100">
+                    <div class="px-5 pt-1 pb-2 bg-gray-50 text-sm text-gray-500 border-b border-gray-100">
                         ระบุลำห้วยที่ปล่อยภาระมลพิษสูง
                     </div>
                     <div class="p-0">
                         <table class="w-full text-left border-collapse">
                             <thead>
-                                <tr class="bg-white border-b text-xs text-gray-400 uppercase tracking-wider">
+                                <tr class="bg-white border-b text-sm text-gray-400 uppercase tracking-wider">
                                     <th class="py-2.5 px-5 font-semibold">สถานี / ตำบล</th>
                                     <th class="py-2.5 px-2 font-semibold text-center">WQI</th>
                                     <th class="py-2.5 px-4 font-semibold text-right">ปัญหาหลัก</th>
@@ -274,48 +243,48 @@
                                 <!-- Hotspot 1 -->
                                 <tr class="border-b bg-red-50 hover:bg-red-100 transition cursor-pointer">
                                     <td class="py-3 px-5">
-                                        <div class="font-bold text-sm text-gray-800 flex items-center">
+                                        <div class="font-bold text-base text-gray-800 flex items-center">
                                             BNH01 <span class="ml-1.5 w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
                                         </div>
-                                        <div class="text-xs text-gray-500 truncate w-24">ธาตุนาเวง</div>
+                                        <div class="text-sm text-gray-500 truncate w-24">ธาตุนาเวง</div>
                                     </td>
                                     <td class="py-3 px-2 text-center">
-                                        <span class="inline-flex items-center justify-center bg-red-500 text-white shadow-sm text-xs font-bold h-6 w-8 rounded">E</span>
+                                        <span class="inline-flex items-center justify-center bg-red-500 text-white shadow-sm text-sm font-bold h-6 w-8 rounded">E</span>
                                     </td>
                                     <td class="py-3 px-4 text-right">
-                                        <div class="text-xs font-bold text-red-700">BOD 6.19</div>
+                                        <div class="text-sm font-bold text-red-700">BOD 6.19</div>
                                         <div class="text-[10px] text-red-500 mt-0.5">เกินมาตรฐานมาก</div>
                                     </td>
                                 </tr>
                                 <!-- Hotspot 2 -->
                                 <tr class="border-b hover:bg-orange-50 transition cursor-pointer">
                                     <td class="py-3 px-5">
-                                        <div class="font-bold text-sm text-gray-800 flex items-center">
+                                        <div class="font-bold text-base text-gray-800 flex items-center">
                                             BNH07 <span class="ml-1.5 w-1.5 h-1.5 rounded-full bg-orange-500"></span>
                                         </div>
-                                        <div class="text-xs text-gray-500 truncate w-24">งิ้วด่อน</div>
+                                        <div class="text-sm text-gray-500 truncate w-24">งิ้วด่อน</div>
                                     </td>
                                     <td class="py-3 px-2 text-center">
-                                        <span class="inline-flex items-center justify-center bg-orange-500 text-white shadow-sm text-xs font-bold h-6 w-8 rounded">D</span>
+                                        <span class="inline-flex items-center justify-center bg-orange-500 text-white shadow-sm text-sm font-bold h-6 w-8 rounded">D</span>
                                     </td>
                                     <td class="py-3 px-4 text-right">
-                                        <div class="text-xs font-medium text-gray-800">COD 31.5</div>
+                                        <div class="text-sm font-medium text-gray-800">COD 31.5</div>
                                         <div class="text-[10px] text-orange-500 mt-0.5">ต้องเฝ้าระวัง</div>
                                     </td>
                                 </tr>
                                 <!-- Hotspot 3 -->
                                 <tr class="hover:bg-gray-50 transition cursor-pointer">
                                     <td class="py-3 px-5">
-                                        <div class="font-bold text-sm text-gray-800 flex items-center">
+                                        <div class="font-bold text-base text-gray-800 flex items-center">
                                             BNH06 <span class="ml-1.5 w-1.5 h-1.5 rounded-full bg-blue-500"></span>
                                         </div>
-                                        <div class="text-xs text-gray-500 truncate w-24">เหล่าปอแดง</div>
+                                        <div class="text-sm text-gray-500 truncate w-24">เหล่าปอแดง</div>
                                     </td>
                                     <td class="py-3 px-2 text-center">
-                                        <span class="inline-flex items-center justify-center bg-blue-500 text-white shadow-sm text-xs font-bold h-6 w-8 rounded">B</span>
+                                        <span class="inline-flex items-center justify-center bg-blue-500 text-white shadow-sm text-sm font-bold h-6 w-8 rounded">B</span>
                                     </td>
                                     <td class="py-3 px-4 text-right">
-                                        <div class="text-xs font-medium text-gray-800">Temp 32.8°C</div>
+                                        <div class="text-sm font-medium text-gray-800">Temp 32.8°C</div>
                                         <div class="text-[10px] text-gray-500 mt-0.5">อุณหภูมิน้ำสูง</div>
                                     </td>
                                 </tr>
@@ -331,17 +300,17 @@
                             <div class="w-8 h-8 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center mr-3 shadow-inner">
                                 <i class="fas fa-chart-line"></i>
                             </div>
-                            <h3 class="font-bold text-lg text-gray-800">พยากรณ์ล่วงหน้า (Predictive)</h3>
+                            <h3 class="font-bold text-xl text-gray-800">พยากรณ์ล่วงหน้า (Predictive)</h3>
                         </div>
-                        <p class="text-xs text-gray-500 mt-1 ml-11">ทำนายช่วงน้ำเสื่อมโทรมก่อนเกิดจริง 7 วัน</p>
+                        <p class="text-sm text-gray-500 mt-1 ml-11">ทำนายช่วงน้ำเสื่อมโทรมก่อนเกิดจริง 7 วัน</p>
                     </div>
                     <div class="p-5 flex flex-col h-full justify-between">
                         
                         <div class="mb-4">
                             <div class="flex justify-between items-center mb-3">
                                 <div class="flex items-center gap-1.5">
-                                    <h4 class="text-xs font-bold text-gray-700 bg-gray-100 px-2 py-1 rounded hidden sm:block">แนวโน้ม (DO)</h4>
-                                    <select id="stationPredictSelect" class="text-xs font-bold border border-gray-200 rounded text-teal-700 bg-white shadow-sm focus:border-teal-500 focus:ring-teal-500 outline-none cursor-pointer py-1 pl-2 pr-6 hover:bg-teal-50 transition">
+                                    <h4 class="text-sm font-bold text-gray-700 bg-gray-100 px-2 py-1 rounded hidden sm:block">แนวโน้ม (DO)</h4>
+                                    <select id="stationPredictSelect" class="text-sm font-bold border border-gray-200 rounded text-teal-700 bg-white shadow-sm focus:border-teal-500 focus:ring-teal-500 outline-none cursor-pointer py-1 pl-2 pr-6 hover:bg-teal-50 transition">
                                         <option value="BNH01">BNH01 (วิกฤต)</option>
                                         <option value="BNH07">BNH07 (เฝ้าระวัง)</option>
                                         <option value="NHK02">NHK02 (หนองหาร)</option>
@@ -351,17 +320,17 @@
                                 <span id="predictStatusBadge" class="text-[10px] font-bold text-red-500 bg-red-50 px-1.5 py-0.5 rounded flex items-center"><i class="fas fa-arrow-down mr-1"></i>วิกฤต</span>
                             </div>
                             <!-- Mockup Chart Area -->
-                            <div class="w-full h-32 bg-white rounded relative">
+                            <div class="w-full h-48 bg-white rounded relative">
                                 <canvas id="doPredictChart"></canvas>
                             </div>
                         </div>
                         
                         <div class="border-t border-gray-100 pt-4 mt-2">
-                            <h4 class="text-xs font-bold text-gray-700 mb-2">ความเสี่ยงธาตุอาหาร (N/P) ล้นเกิน</h4>
+                            <h4 class="text-sm font-bold text-gray-700 mb-2">ความเสี่ยงธาตุอาหาร (N/P) ล้นเกิน</h4>
                             
                             <div class="space-y-3">
                                 <div>
-                                    <div class="flex justify-between text-xs mb-1">
+                                    <div class="flex justify-between text-sm mb-1">
                                         <span class="text-gray-600">ไนเตรต (NO3) - งิ้วด่อน</span>
                                         <span class="font-bold text-orange-600">สูง (2.19 mg/L)</span>
                                     </div>
@@ -371,7 +340,7 @@
                                 </div>
                                 
                                 <div>
-                                    <div class="flex justify-between text-xs mb-1">
+                                    <div class="flex justify-between text-sm mb-1">
                                         <span class="text-gray-600">ฟอสฟอรัส (TP) - ธาตุนาเวง</span>
                                         <span class="font-bold text-red-600">วิกฤต (2.34 mg/L)</span>
                                     </div>
@@ -466,12 +435,12 @@
                     <div class="bg-white rounded-lg p-4 min-w-[220px] font-['Kanit']">
                         <div class="flex justify-between items-start border-b border-gray-100 pb-2 mb-2">
                             <div>
-                                <p class="font-bold text-gray-800 text-base m-0 leading-tight">${st.id}</p>
-                                <p class="text-xs text-gray-500 m-0">${st.name} (${st.tambon})</p>
+                                <p class="font-bold text-gray-800 text-lg m-0 leading-tight">${st.id}</p>
+                                <p class="text-sm text-gray-500 m-0">${st.name} (${st.tambon})</p>
                             </div>
                             <span class="${badgeColor} text-white text-[10px] font-bold px-2 py-1 rounded shadow-sm">WQI: ${st.wqi} (${st.class})</span>
                         </div>
-                        <div class="space-y-1.5 text-xs text-gray-700">
+                        <div class="space-y-1.5 text-sm text-gray-700">
                             <div class="flex justify-between"><span class="text-gray-500">ออกซิเจน (DO):</span> <span class="font-medium ${st.do < 5 ? 'text-red-500' : ''}">${st.do} mg/L</span></div>
                             <div class="flex justify-between"><span class="text-gray-500">ความเน่าเสีย (BOD):</span> <span class="font-medium ${st.alert ? 'text-red-600 font-bold' : ''}">${st.bod} mg/L ${st.alert?'⚠️':''}</span></div>
                             <div class="flex justify-between"><span class="text-gray-500">ประเภท:</span> <span>${st.type}</span></div>
@@ -484,26 +453,6 @@
                     .bindPopup(popupContent);
             });
 
-            // --- 4.5 Simulated Water Flow Paths (Tributary to Lake) ---
-            var flowLayer = L.layerGroup().addTo(map);
-
-            var path1 = [[17.170, 104.110], [17.175, 104.120], [17.185, 104.140]];
-            L.polyline(path1, { color: '#EF4444', weight: 4, className: 'flow-line' }).addTo(flowLayer);
-            
-            var path2 = [[17.210, 104.180], [17.205, 104.170], [17.200, 104.160]];
-            L.polyline(path2, { color: '#F97316', weight: 4, className: 'flow-line' }).addTo(flowLayer);
-
-            var path3 = [[17.240, 104.150], [17.230, 104.155], [17.200, 104.160]];
-            L.polyline(path3, { color: '#3B82F6', weight: 4, className: 'flow-line' }).addTo(flowLayer);
-
-            // Handle Flow Toggle Switch
-            document.getElementById('toggleFlow').addEventListener('change', function(e) {
-                if (e.target.checked) {
-                    map.addLayer(flowLayer);
-                } else {
-                    map.removeLayer(flowLayer);
-                }
-            });
 
             // --- 5. Initialize Prediction Chart ---
             var ctx = document.getElementById('doPredictChart').getContext('2d');
