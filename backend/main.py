@@ -4,6 +4,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import pandas as pd
 import os
+import pickle
 # pyrefly: ignore [missing-import]
 from groq import Groq
 # pyrefly: ignore [missing-import]
@@ -38,7 +39,7 @@ def read_root():
 
 @app.post("/predict-result")
 def predict_result():
-    return {"message": "AI prediction result"}
+    return "nothing"
 
 @app.post("/summary-in-past")
 def summary_in_past():
