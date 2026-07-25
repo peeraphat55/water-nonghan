@@ -1,5 +1,6 @@
 # pyrefly: ignore [missing-import]
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 # pyrefly: ignore [missing-import]
 from pydantic import BaseModel
 import pandas as pd
@@ -15,13 +16,21 @@ base_dir = os.path.dirname(os.path.abspath(__file__))
 env_path = os.path.join(os.path.dirname(base_dir), ".env")
 load_dotenv(env_path)
 
-# เริ่มต้น Groq Client
-client = Groq(
+# เริ่มต้น Groq Client แบบ Async (เหมาะกับ FastAPI)
+from groq import AsyncGroq
+client = AsyncGroq(
     api_key=os.environ.get("API_GROQ_KEY"),
 )
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 # โหลดข้อมูล CSV
 csv_path = os.path.join(base_dir, "dataset1_nonghan_water_quality.csv")
 
@@ -46,7 +55,7 @@ def summary_in_past():
     return {"message": "Summary in past"}
 
 @app.post("/chat")
-def chat_with_data(request: ChatRequest):
+async def chat_with_data(request: ChatRequest):
     if df.empty:
         return {"reply": "ไม่พบไฟล์ข้อมูล หรือข้อมูลว่างเปล่า"}
         
@@ -56,10 +65,17 @@ def chat_with_data(request: ChatRequest):
     wqi_counts = ", ".join([f"{k}: {v} รายการ" for k, v in df['WQI_al_class'].value_counts().items()])
     seasons = ", ".join([f"{k}: {v} รายการ" for k, v in df['season'].value_counts().items()])
     
-    # จัดอันดับสถานีตามคะแนน WQI เฉลี่ย
+    # จัดอันดับสถานีตามคะแนน WQI เฉลี่ย พร้อมแสดงข้อมูลตำบลและประเภท
+    station_info = df.groupby('station_id').first()[['tambon', 'station_type']]
     station_wqi = df.groupby('station_id')['WQI_al_score'].mean().sort_values()
-    station_ranking = "\n".join([f"  - {station}: {score:.2f} คะแนน" for station, score in station_wqi.items()])
     
+    station_ranking_list = []
+    for station, score in station_wqi.items():
+        tambon = station_info.loc[station, 'tambon']
+        stype = station_info.loc[station, 'station_type']
+        station_ranking_list.append(f"  - สถานี {station} (ตำบล{tambon}, {stype}): {score:.2f} คะแนน")
+    
+    station_ranking = "\n".join(station_ranking_list)
     # เปรียบเทียบตามประเภทแหล่งน้ำ (station_type)
     type_wqi = df.groupby('station_type')['WQI_al_score'].mean() if 'station_type' in df.columns else {}
     type_comparison = ", ".join([f"{stype}: {score:.2f} คะแนน" for stype, score in type_wqi.items()])
@@ -87,7 +103,7 @@ def chat_with_data(request: ChatRequest):
     )
 
     try:
-        chat_completion = client.chat.completions.create(
+        chat_completion = await client.chat.completions.create(
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": request.message}
